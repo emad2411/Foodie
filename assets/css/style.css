@@ -1,0 +1,237 @@
+:root {
+  --color-primary: #e8545c;
+  --bs-primary-rgb: 232, 84, 92;
+  --color-secondary: #292929;
+  --color-acc: hsl(109, 76%, 31%);
+  --color-primary-transparent: hsla(357, 76%, 62%.0.3);
+  --bg-section: hsl(46, 50%, 87%);
+  --bg-card: hsl(46, 69%, 94%);
+}
+
+*,
+*::before,
+*,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Grand Hotel", cursive;
+}
+
+h1 {
+  font-size: 8rem;
+}
+h2 {
+  font-size: 5rem;
+}
+h3 {
+  font-size: 2.5rem;
+}
+h4 {
+  font-size: 2rem;
+}
+
+h2,
+h3,
+h4 {
+  color: var(--color-primary);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.btn-outline-primary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.section-heading {
+  max-width: 500px;
+}
+/* Header */
+header {
+  min-height: 100vh;
+}
+header::before {
+  content: "";
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  opacity: 0.8;
+}
+
+/* NavBar */
+.navbar {
+  z-index: 1030;
+}
+
+.navbar .navbar-brand {
+  width: 160px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: white !important;
+}
+
+.nav-link.active {
+  color: white;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  border-radius: 5px;
+}
+
+/* HERO SECTION*/
+.hero {
+  background-image: url("../images/desktop/hero-bg.jpg");
+  background-color: var(--color-primary);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero-text {
+  z-index: 1020;
+}
+.hero-text p {
+  max-width: 500px;
+}
+.btn-hero {
+  transition: 0.2s;
+}
+.btn-hero:hover {
+  background-color: var(--color-acc) !important;
+  color: white !important;
+}
+
+.text-secondary {
+  color: var(--color-secondary) !important;
+}
+
+/* POPULAR SECTION */
+.popular {
+  background-image: url("../images/desktop/popular-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.popular::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.popular .dish-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.popular .dish-1 {
+  background-image: url("../images/desktop/dish-1.jpg");
+}
+
+.popular .dish-2 {
+  background-image: url("../images/desktop/dish-2.jpg");
+}
+
+.popular .dish-3 {
+  background-image: url("../images/desktop/dish-3.jpg");
+}
+
+/* STATISTIC SECTION */
+
+.statistic {
+  background-image: url("../images/desktop/statistic-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.statistic::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  opacity: 0.8;
+}
+
+.statistic .stat-item {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: dashed !important;
+}
+/* MENU SECTION */
+
+.menu {
+  background-color: var(--bg-section);
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 5rem 9rem;
+  grid-template-areas: "icn title" "pra pra";
+}
+.menu-item .menu-icn {
+  grid-area: icn;
+}
+.menu-icn > img {
+  max-height: 100%;
+}
+.menu-item h4 {
+  align-self: center;
+  grid-area: title;
+}
+.menu-item p {
+  grid-area: pra;
+  align-self: center;
+  text-align: center !important;
+}
+
+@media (min-width: 768px) {
+  .menu-item {
+    display: grid;
+    grid-template-areas: "icn title" "icn pra";
+    grid-template-rows: 2rem 9rem;
+    grid-template-columns: 1fr 3fr;
+  }
+  .menu-item p {
+    text-align: start !important;
+  }
+  .menu-icn > img {
+    align-self: start;
+  }
+}

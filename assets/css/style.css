@@ -1,7 +1,7 @@
 :root {
   --color-primary: #e8545c;
   --bs-primary-rgb: 232, 84, 92;
-  --color-secondary: #292929;
+  --color-secondary: #2a2a2a;
   --color-acc: hsl(109, 76%, 31%);
   --color-primary-transparent: hsla(357, 76%, 62%.0.3);
   --bg-section: hsl(46, 50%, 87%);
@@ -70,6 +70,17 @@ h4 {
 .section-heading {
   max-width: 500px;
 }
+
+.bg-secondary {
+  background-color: var(--color-secondary) !important;
+}
+
+.bg-section {
+  background-color: var(--bg-section);
+}
+.bg-card {
+  background-color: var(--bg-card);
+}
 /* Header */
 header {
   min-height: 100vh;
@@ -102,8 +113,6 @@ header::before {
 .nav-link.active {
   color: white;
   border-bottom: 1px solid white;
-  border-top: 1px solid white;
-  border-radius: 5px;
 }
 
 /* HERO SECTION*/
@@ -221,6 +230,75 @@ header::before {
   text-align: center !important;
 }
 
+/* PIZZA SECTION  */
+
+.pizza {
+  background-color: var(--bg-card);
+}
+
+.pizza-photo::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  opacity: 0.5;
+}
+
+.menu-card {
+  width: 300px;
+  height: 100%;
+}
+
+.chef {
+  background-image: url(../images/desktop/chef-bg.jpg);
+}
+.chef::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.chef img {
+  width: 200px;
+}
+
+.chef blockquote {
+  max-width: 550px;
+}
+.chef h3 {
+  font-size: 3rem;
+}
+
+.subscribe-form {
+  width: fit-content;
+}
+
+.subscribe-form input[type="email"] {
+  border: none;
+  outline: none;
+}
+
+footer .about-us p {
+  max-width: 400px;
+}
+
+@media (max-width: 767.99px) {
+  html {
+    font-size: 14px;
+  }
+
+  .subscribe-form input[type="email"] {
+    width: 200px;
+  }
+}
+
 @media (min-width: 768px) {
   .menu-item {
     display: grid;
@@ -233,5 +311,28 @@ header::before {
   }
   .menu-icn > img {
     align-self: start;
+  }
+  .navbar.bg-primary {
+    background-color: transparent !important;
+  }
+
+  .subscribe-form input[type="email"] {
+    width: 320px;
+  }
+}
+
+/* for portrait mode  */
+
+@media (min-width: 768px) and (orientation: portrait) {
+  header {
+    min-height: 60vh;
+  }
+}
+
+/* for Laptops */
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  header {
+    min-height: 75vh;
   }
 }
